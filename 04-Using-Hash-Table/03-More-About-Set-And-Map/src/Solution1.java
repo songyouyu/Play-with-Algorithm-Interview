@@ -1,30 +1,21 @@
 import java.util.HashSet;
-import java.util.Set;
 import java.util.TreeSet;
 
 /**
  * leetcode 349
  * @author youyusong
- * @date 2018/8/19
+ * @date 2018/8/20
  */
-public class Solution {
+public class Solution1 {
 
-    /**
-     * 给定两个数组,求两个数组的交集,忽略重复元素
-     * 时间复杂度: O(nlogn)
-     * 空间复杂度: O(n)
-     * @param nums1
-     * @param nums2
-     * @return
-     */
     public int[] intersection(int[] nums1, int[] nums2) {
-        TreeSet<Integer> record = new TreeSet<>();
+        HashSet<Integer> record = new HashSet<>();
 
         for (int i = 0; i < nums1.length; i ++) {
             record.add(nums1[i]);
         }
 
-        TreeSet<Integer> resultSet = new TreeSet<>();
+        HashSet<Integer> resultSet = new HashSet<>();
         for (int i = 0; i < nums2.length; i ++) {
             if (record.contains(nums2[i])) {
                 resultSet.add(nums2[i]);

@@ -5,20 +5,12 @@ import java.util.TreeMap;
 /**
  * leetcode 350
  * @author youyusong
- * @date 2018/8/19
+ * @date 2018/8/20
  */
-public class Solution {
+public class Solution2 {
 
-    /**
-     * 给定两个数组,求两个数组的交集,计较重复元素
-     * 时间复杂度: O(nlogn)
-     * 空间复杂度: O(n)
-     * @param nums1
-     * @param nums2
-     * @return
-     */
     public int[] intersect(int[] nums1, int[] nums2) {
-        TreeMap<Integer, Integer> record = new TreeMap<>();
+        HashMap<Integer, Integer> record = new HashMap<>();
         for (Integer num : nums1) {
             if (record.containsKey(num)) {
                 record.put(num, record.get(num) + 1);
@@ -44,4 +36,5 @@ public class Solution {
 
         return res;
     }
+
 }
