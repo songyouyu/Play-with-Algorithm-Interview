@@ -33,12 +33,14 @@ public class Solution1 {
         });
 
         int[] memo = new int[intervals.length];
+        // 把第 i 个区间自己拿出来, 这个区间的长度只有 1, 此时这个区间肯定是不重叠的
         Arrays.fill(memo, 1);
 
         // 最长不重叠区间
         for (int i = 1; i < intervals.length; i ++) {
             for (int j = 0; j < i; j ++) {
                 if (intervals[i].start >= intervals[j].end) {
+                    // 以第 j 个区间结尾的最长不重叠区间序列, + 1 表示当前考察的 intervals[i] 这个区间
                     memo[i] = Math.max(memo[i], 1 + memo[j]);
                 }
             }

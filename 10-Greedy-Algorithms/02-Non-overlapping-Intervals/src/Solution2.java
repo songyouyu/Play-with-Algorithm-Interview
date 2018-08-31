@@ -31,7 +31,9 @@ public class Solution2 {
             }
         });
 
+        // 已排好序的区间, 第一个区间肯定是取的
         int res = 1;
+        // 执行循环之前, 已经选择第 0 个区间
         int pre = 0;
         for(int i = 1 ; i < intervals.length ; i ++) {
             if(intervals[i].start >= intervals[pre].end){
