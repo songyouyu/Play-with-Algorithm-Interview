@@ -10,15 +10,17 @@ import java.util.LinkedList;
 public class Solution2 {
 
     /**
-     * 优化
+     * 优化: 图中广度优先遍历
      * @param n
      * @return
      */
     public int numSquares(int n) {
         LinkedList<Pair<Integer, Integer>> queue = new LinkedList<>();
+        // 具体第几个数字   经历了几段路径走到这个数字
+        // 初始化时，对于 n 这个数字，一步都没有走，0 步就到达了
         queue.addLast(new Pair<>(n, 0));
 
-        // 标记元素是否被访问过,传入进来的元素是被访问过的
+        // 从 0 到 n 个， 一共 n + 1 个数字，标记元素是否被访问过,传入进来的元素是被访问过的
         boolean[] visited = new boolean[n + 1];
         visited[n] = true;
 
@@ -27,6 +29,7 @@ public class Solution2 {
             int num = front.getKey();
             int step = front.getValue();
 
+            // 已经找到从 n 到 0 的路径，经历 step
             if (num == 0) {
                 return step;
             }

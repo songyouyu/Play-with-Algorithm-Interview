@@ -17,6 +17,7 @@ public class Solution {
             }
             treeSet.add((long)nums[i]);
 
+            // 限定了索引的范围
             if (treeSet.size() == k + 1) {
                 treeSet.remove(nums[i - k]);
             }
@@ -24,4 +25,12 @@ public class Solution {
         return false;
     }
 
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {1,2,3,1};
+        int k = 3;
+        int t = 0;
+        boolean b = solution.containsNearbyAlmostDuplicate(nums, k, t);
+        System.out.println(b);
+    }
 }

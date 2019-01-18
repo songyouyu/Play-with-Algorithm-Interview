@@ -36,7 +36,7 @@ public class Solution1 {
 
         int res = 0;
         for (int i = index; i < nums.length; i ++) {
-            res = Math.max(res, nums[i] + tryRob(nums, nums[i + 2]));
+            res = Math.max(res, nums[i] + tryRob(nums, i + 2));
         }
         memo[index] = res;
         return res;

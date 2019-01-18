@@ -21,11 +21,13 @@ public class Solution2 {
         int[][] memo = new int[n][C + 1];
 
         for (int j = 0; j <= C; j ++) {
+            // 如果背包的容量大于物品的重量，则可以放入背包
             memo[0][j] = (j >= w[0] ? v[0] : 0 );
         }
 
         for(int i = 1 ; i < n ; i ++) {
             for(int j = 0 ; j <= C ; j ++){
+                // 先不考虑第 0 号物品
                 memo[i][j] = memo[i-1][j];
                 if(j >= w[i]) {
                     memo[i][j] = Math.max(memo[i][j], v[i] + memo[i - 1][j - w[i]]);

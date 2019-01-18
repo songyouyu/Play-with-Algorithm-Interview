@@ -22,6 +22,7 @@ public class Solution3 {
                 memo[i] = max3(memo[i], j * (i - j), j * memo[i - j]);
             }
         }
+
         return memo[n];
     }
 

@@ -13,6 +13,7 @@ public class Solution2 {
 
         int k = 0;
 
+        // 若数组全部都是非 0 元素，则每一个元素都是自己和自己交换了位置
         for (int i = 0; i < num.length; i ++) {
             if (num[i] != 0) {
                 swap(num, k, i);

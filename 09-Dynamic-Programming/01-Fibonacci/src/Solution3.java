@@ -18,4 +18,10 @@ public class Solution3 {
         }
         return memo[n];
     }
+
+    public static void main(String[] args) {
+        Solution3 solution3 = new Solution3();
+        int n = 1000;
+        System.out.println(solution3.fib(n));
+    }
 }

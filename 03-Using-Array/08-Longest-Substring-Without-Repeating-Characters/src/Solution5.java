@@ -21,7 +21,7 @@ public class Solution5 {
 
             if (last[s.charAt(r)] != -1) {
                 // l 直接跳转到上次出现的位置 +1 的地方
-                l = Math.max(l, last[s.charAt(r) + 1]);
+                l = Math.max(l, last[s.charAt(r)] + 1);
             }
 
             res = Math.max(res, r - l + 1);

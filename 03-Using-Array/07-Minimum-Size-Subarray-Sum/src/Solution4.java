@@ -18,6 +18,7 @@ public class Solution4 {
         }
 
         int l = 0;
+        // 初始化时不包含任何元素
         int r = -1;
         int sum = 0;
         int res = num.length + 1;

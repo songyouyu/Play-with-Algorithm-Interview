@@ -10,13 +10,15 @@ public class Solution {
     private int d[][] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
     public int numIslands(char[][] grid) {
-        if (grid == null || grid.length == 0) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
         // 行
         m = grid.length;
         // 列
         n = grid[0].length;
+
+        visited = new boolean[m][n];
 
         int res = 0;
         for (int i = 0; i < m; i ++) {
@@ -41,6 +43,8 @@ public class Solution {
                 }
             }
         }
+
+        return;
     }
 
     private boolean inArea(int x, int y){

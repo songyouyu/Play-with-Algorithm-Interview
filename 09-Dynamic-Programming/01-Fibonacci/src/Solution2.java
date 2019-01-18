@@ -8,6 +8,11 @@ public class Solution2 {
 
     private int num = 0;
 
+    /**
+     * 记忆化搜索
+     * @param n
+     * @return
+     */
     public int fib(int n){
         int[] memo = new int[n + 1];
         Arrays.fill(memo, -1);
@@ -39,7 +44,7 @@ public class Solution2 {
 
     public static void main(String[] args) {
 
-        int n = 40;
+        int n = 400;
 
         Solution2 solution = new Solution2();
         long startTime = System.currentTimeMillis();

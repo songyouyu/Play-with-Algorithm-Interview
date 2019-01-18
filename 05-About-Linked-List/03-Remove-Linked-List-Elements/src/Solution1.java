@@ -11,6 +11,7 @@ public class Solution1 {
         while (head.next != null && head.val == val) {
             ListNode delNode = head;
             head = head.next;
+            delNode.next = null;
         }
 
         if (head == null) {

@@ -9,7 +9,6 @@ import java.util.*;
  */
 public class Solution {
 
-
     public List<Integer> topKFrequent(int[] nums, int k) {
         if (k < 0 || k > nums.length) {
             throw new IllegalArgumentException("exception");

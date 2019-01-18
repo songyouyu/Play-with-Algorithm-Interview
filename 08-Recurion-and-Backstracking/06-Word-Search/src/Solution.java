@@ -8,7 +8,7 @@ public class Solution {
     private int m;
     private int n;
     private boolean[][] visited;
-    private int d[][] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    private int[][] d = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
     public boolean exist(char[][] board, String word) {
         if (board == null || word == null) {
@@ -19,10 +19,10 @@ public class Solution {
         m = board.length;
         // 列
         n = board[0].length;
-        if (m == 0 || n == 0) {
+        if (m == 0) {
             throw new IllegalArgumentException("exception");
         }
-        visited[m][n] = true;
+        visited = new boolean[m][n];
         for (int i = 0; i < m; i ++) {
             for (int j = 0; j < n; j ++) {
                 if (searchWord(board, word, 0, i, j)) {
@@ -33,6 +33,15 @@ public class Solution {
         return false;
     }
 
+    /**
+     * 从board[startx][starty]开始, 寻找word[index...word.size())
+     * @param board
+     * @param word
+     * @param index
+     * @param startx
+     * @param starty
+     * @return
+     */
     private boolean searchWord(char[][] board, String word, int index, int startx, int starty){
         if (index == word.length() - 1) {
             return board[startx][starty] == word.charAt(index);

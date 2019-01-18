@@ -28,7 +28,7 @@ public class Solution {
                     target = '{';
                 }
 
-                if (! c.equals( target)) {
+                if (! c.equals(target)) {
                     return false;
                 }
             }

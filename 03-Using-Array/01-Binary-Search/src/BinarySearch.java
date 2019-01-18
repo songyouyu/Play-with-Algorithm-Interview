@@ -18,7 +18,7 @@ public class BinarySearch {
         int r = n - 1;
 
         // 在数组 arr[l...r] 中查找元素 target
-        // 即使 l == r, arr[l...r] 依然有效
+        // 即使 l == r, arr[l...r] 依然有效, 说明此时数组还有元素，依然需要查找下去
         while (l <= r) {
             int mid = l + (r - l) / 2;
             if (target == arr[mid]) {

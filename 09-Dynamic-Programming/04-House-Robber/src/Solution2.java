@@ -17,12 +17,14 @@ public class Solution2 {
         }
 
         int[] memo = new int[nums.length];
+        // memo[i] 表示考虑抢劫 nums[i...n-1] 所能获得的最大收益
         memo[n -1] = nums[n - 1];
         for (int i = n - 2; i >= 0; i --) {
             for (int j = i; j < n; j ++) {
-                memo[i] = Math.max(memo[i], memo[j] + (j + 2 > n ? 0 : memo[j + 2] ));
+                memo[i] = Math.max(memo[i], memo[j] + (j + 2 > n ? 0 : memo[j + 2]));
             }
         }
+
         return memo[0];
     }
 }

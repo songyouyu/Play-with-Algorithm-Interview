@@ -7,7 +7,7 @@ public class Solution4 {
 
 
     /**
-     * 基于Solution1, 若s[r + 1]之前出现过，则l可以直接跳到之前
+     * 基于Solution1, 若 s[r + 1] 之前出现过，则 l 可以直接跳到之前
      * s[r + 1]出现的位置 +1 的地方
      * 时间复杂度: O(len(s)*len(charset))
      * 空间复杂度: O(1)
@@ -15,7 +15,6 @@ public class Solution4 {
      * @return
      */
     public int lengthOfLongestSubstring(String s) {
-        int[] freq = new int[256];
 
         int l = 0;
         int r = 0;

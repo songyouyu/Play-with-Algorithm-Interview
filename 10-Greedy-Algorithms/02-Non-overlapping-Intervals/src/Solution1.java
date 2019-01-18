@@ -15,11 +15,15 @@ public class Solution1 {
         Interval(int s, int e) { start = s; end = e; }
     }
 
+    /**
+     * 改变说法：给定一组区间，最多保留多少个区间，可以让这些区间互相不重叠？
+     * @param intervals
+     * @return
+     */
     public int eraseOverlapIntervals(Interval[] intervals) {
         if (intervals.length == 0) {
             return 0;
         }
-
 
         Arrays.sort(intervals, new Comparator<Interval>() {
             @Override
@@ -32,8 +36,9 @@ public class Solution1 {
             }
         });
 
+        // memo[i] 表示使用 intervals[0...i]的区间能够成的最长不重叠区间序列
         int[] memo = new int[intervals.length];
-        // 把第 i 个区间自己拿出来, 这个区间的长度只有 1, 此时这个区间肯定是不重叠的
+        // 把第 i 个区间自己拿出来, 这个区间的长度只有 1, 此时这个区间肯定是互不重叠的
         Arrays.fill(memo, 1);
 
         // 最长不重叠区间

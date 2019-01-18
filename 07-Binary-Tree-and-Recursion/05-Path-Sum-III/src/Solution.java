@@ -31,6 +31,8 @@ public class Solution {
             return 0;
         }
         int res = 0;
+
+        // res += 1, 当前的节点它的 val 等于 num, 有可能它和后续的节点加在一起又等于 num
         if (node.val == num) {
             res += 1;
         }

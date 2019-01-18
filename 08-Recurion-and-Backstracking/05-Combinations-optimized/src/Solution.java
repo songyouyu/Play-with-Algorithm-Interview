@@ -11,6 +11,12 @@ public class Solution {
 
     private ArrayList<List<Integer>> res;
 
+    /**
+     * 优化：剪枝
+     * @param n
+     * @param k
+     * @return
+     */
     public List<List<Integer>> combine(int n, int k) {
         res = new ArrayList<>();
         if (n < 0 || k < 0 || k > n) {

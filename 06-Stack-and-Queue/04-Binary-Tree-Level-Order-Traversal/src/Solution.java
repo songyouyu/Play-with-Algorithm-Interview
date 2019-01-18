@@ -27,18 +27,20 @@ public class Solution {
         }
 
         // Pair : 提供了一种方式来处理简单的键值关联，当我们想从方法返回两个值时特别有用。
-        LinkedList<Pair<TreeNode, Integer>> queue = new LinkedList<>();
+        LinkedList<Pair<TreeNode, Integer>> queue = new LinkedList<Pair<TreeNode, Integer>>();
         queue.addLast(new Pair<>(root, 0));
 
         while (! queue.isEmpty()){
-            Pair<TreeNode, Integer> front = queue.removeLast();
+            Pair<TreeNode, Integer> front = queue.removeFirst();
             TreeNode node = front.getKey();
             int level = front.getValue();
 
-            // 此时说明当前层级下没有位置来来添加元素, res 需要增加位置简介增加层级
-            if (level == queue.size()) {
+            // 此时说明当前层级下没有位置来添加元素, res 需要增加位置间接增加层级
+            if (level == res.size()) {
                 res.add(new ArrayList<>());
             }
+
+            // 访问 res 的索引要小于 res.size()
             res.get(level).add(node.val);
             if (node.left != null) {
                 queue.addLast(new Pair<>(node.left, level + 1));
@@ -47,6 +49,8 @@ public class Solution {
                 queue.addLast(new Pair<>(node.right, level + 1));
             }
         }
+
         return res;
     }
+
 }
