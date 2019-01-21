@@ -17,6 +17,7 @@ public class Solution3 {
             if (num[i] != 0) {
                 if (i != k) {
                     swap(num, k, i);
+                    k ++;
                 } else {
                     k ++;
                 }
