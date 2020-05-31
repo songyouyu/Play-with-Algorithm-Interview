@@ -21,7 +21,7 @@ public class Solution2 {
         memo[n -1] = nums[n - 1];
         for (int i = n - 2; i >= 0; i --) {
             for (int j = i; j < n; j ++) {
-                memo[i] = Math.max(memo[i], memo[j] + (j + 2 > n ? 0 : memo[j + 2]));
+                memo[i] = Math.max(memo[i], nums[j] + (j + 2 >= n ? 0 : memo[j + 2]));
             }
         }
 
